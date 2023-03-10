@@ -16,14 +16,36 @@
     box-shadow: #0DCAF0 0px 0px 10px;
 }
 
+.workoutImage{
+    width: 200px;
+}
+
+.singleWorkoutImage{
+    width: 100%;
+}
+
 @media only screen and (max-width: 992px) {
     .heroImage{
         width: 100%;
+    }
+    .workoutImage{
+        width: 100%;
+    }
+    .singleWorkoutBackground{
+        height: 100vh;
     }
 }
 
 @media only screen and (min-width: 992px) {
     .carousel-inner{
         height: 800px !important;
+    }
+
+    .workoutsBackground{
+        height: 100vh;
+    }
+
+    .singleWorkoutImage{
+        width: 500px;
     }
 }

@@ -27,6 +27,8 @@
 
     <meta name="description" content="" />
 
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -86,9 +88,9 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" class="menu-link gap-2">
+                    <a href="{{route('admin.workouts.index')}}" class="menu-link gap-2">
                         <i class="fa-solid fa-dumbbell text-info"></i>
-                        <div data-i18n="Analytics">Wirken workouts</div>
+                        <div>Wirken workouts</div>
                     </a>
                 </li>
                 <li class="menu-item">

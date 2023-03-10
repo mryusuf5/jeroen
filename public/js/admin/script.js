@@ -19,3 +19,7 @@ confirmForm.forEach((e) => {
         });
     })
 })
+
+var quill = new Quill('#editor', {
+    theme: 'snow'
+})

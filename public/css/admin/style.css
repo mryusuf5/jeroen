@@ -6,3 +6,13 @@
     left: 80%;
     top: 50%;
 }
+
+.editImage{
+    width: 100%;
+}
+
+@media only screen and (min-width: 992px) {
+    .editImage{
+        width: 50%;
+    }
+}

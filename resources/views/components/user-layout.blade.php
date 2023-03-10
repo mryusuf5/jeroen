@@ -39,7 +39,7 @@
     </div>
     <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand text-white" href="{{route('home')}}">Wirker workouts</a>
+            <a class="navbar-brand text-white" href="{{route('home')}}">Jeroen wirken</a>
             <button class="navbar-toggler border border-white" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent">
                 <span class="text-white"><i class="fa-solid fa-bars"></i></span>
@@ -56,7 +56,7 @@
                         <a class="nav-link text-white" href="#">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Wirken workouts</a>
+                        <a class="nav-link text-white" href="{{route('wirkenWorkouts')}}">Wirken workouts</a>
                     </li>
                 </ul>
             </div>
