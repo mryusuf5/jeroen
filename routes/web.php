@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('user.welcome');
-})->name('home');
+Route::get('/', [SliderController::class, 'welcome'])->name('home');
 
 Route::get('/wirken-workouts', function(){
     return view('user.wirkenWorkouts');
@@ -34,4 +33,5 @@ Route::prefix('/admin')->name('admin.')->middleware('admin')->group(function(){
         })->name('dashboard');
 
     Route::get('logout', [UserController::class, 'logout'])->name('logout');
+    Route::resource('carousel', SliderController::class);
 });
