@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="{{asset('css/admin/theme-default.css')}}" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="{{asset('css/admin/demo.css')}}" />
     <link rel="stylesheet" href="{{asset('css/admin/style.css')}}" />
+{{--    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">--}}
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="{{asset('css/admin/perfect-scrollbar.css')}}" />
@@ -79,7 +80,7 @@
             <ul class="menu-inner py-1">
                 <!-- Dashboard -->
                 <li class="menu-item">
-                    <a href="#" class="menu-link gap-2">
+                    <a href="{{route('admin.carousel.index')}}" class="menu-link gap-2">
                         <i class="fa-solid fa-image text-info"></i>
                         <div data-i18n="Analytics">Carousel foto's</div>
                     </a>
@@ -143,5 +144,7 @@
 <script src="{{asset('js/admin/perfect-scrollbar.js')}}"></script>
 <script src="{{asset('js/admin/menu.js')}}"></script>
 <script src="{{asset('js/admin/main.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{{asset('js/admin/script.js')}}"></script>
 </body>
 </html>

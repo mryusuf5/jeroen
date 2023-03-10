@@ -14,15 +14,11 @@
                             data-bs-slide-to="2"></button>
                 </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="{{asset('images/klanten.jpg')}}" class="d-block w-100" alt="...">
+                    @foreach($images as $index => $image)
+                    <div class="carousel-item @if($index == 0) active @endif ">
+                        <img src="{{asset('images/' . $image->image_path)}}" class="d-block w-100">
                     </div>
-                    <div class="carousel-item">
-                        <img src="{{asset('images/klanten2.jpg')}}" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{{asset('images/klanten3.jpg')}}" class="d-block w-100" alt="...">
-                    </div>
+                    @endforeach
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
