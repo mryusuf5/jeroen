@@ -1,0 +1,29 @@
+.heroImage{
+    background-image: radial-gradient(circle, transparent, #212529), url("../images/jeroen.jpg");
+    width: 40%;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.reviewContainer{
+    transition: .25s ease-out;
+}
+
+.reviewContainer:hover{
+    transform: translateY(-5px);
+    box-shadow: #0DCAF0 0px 0px 10px;
+}
+
+@media only screen and (max-width: 992px) {
+    .heroImage{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .carousel-inner{
+        height: 800px !important;
+    }
+}
