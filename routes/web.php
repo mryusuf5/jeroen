@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.welcome');
 })->name('home');
+
+Route::get('/wirken-workouts', function(){
+    return view('user.wirkenWorkouts');
+})->name('wirkenWorkouts');
+
+Route::get('/login', function (){
+    return view('admin.login');
+})->name('login');
+
+Route::post('/login', [UserController::class, 'login']);
+
+Route::prefix('/admin')->name('admin.')->middleware('admin')->group(function(){
+    Route::get('', function (){
+        return view('admin.dashboard');
+        })->name('dashboard');
+
+    Route::get('logout', [UserController::class, 'logout'])->name('logout');
+});

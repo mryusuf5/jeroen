@@ -42,7 +42,7 @@
                 <div class="screen-content">
                     <div class="screen-user">
                         <span class="name">WW</span>
-                        <a class="link" href="#">Wirken workouts</a>
+                        <a class="link" href="{{route('wirkenWorkouts')}}">Wirken workouts</a>
                     </div>
                 </div>
             </div>
