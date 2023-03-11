@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class SliderImages extends Model
 {
     use HasFactory;
+
+    protected $table = 'slider_images';
 }
