@@ -1,17 +1,4 @@
 <!DOCTYPE html>
-
-<!-- =========================================================
-* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
-==============================================================
-
-* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
-* Created by: ThemeSelection
-* License: You must have a valid license purchased in order to legally use the theme for your project.
-* Copyright ThemeSelection (https://themeselection.com)
-
-=========================================================
- -->
-<!-- beautify ignore:start -->
 <html
     lang="en"
     class="light-style layout-menu-fixed"
@@ -91,6 +78,18 @@
                     <a href="{{route('admin.workouts.index')}}" class="menu-link gap-2">
                         <i class="fa-solid fa-dumbbell text-info"></i>
                         <div>Wirken workouts</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{route('admin.customers.index')}}" class="menu-link gap-2">
+                        <i class="fa-solid fa-users text-info"></i>
+                        <div>Klanten</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{route('admin.charts.index')}}" class="menu-link gap-2">
+                        <i class="fa-solid fa-chart-line text-info"></i>
+                        <div>Grafieken</div>
                     </a>
                 </li>
                 <li class="menu-item">

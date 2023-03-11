@@ -6,25 +6,25 @@
             @csrf
             @method('POST')
             <div class="form-group">
-                <label for="">Titel</label>
+                <label for="">Titel <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" name="title" value="{{old('title')}}">
                 <span class="text-danger">@error('title'){{$message}}@enderror</span>
             </div>
             <br>
             <div class="form-group">
-                <label for="">Beschrijving</label>
+                <label for="">Beschrijving <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" name="description" value="{{old('description')}}">
                 <span class="text-danger">@error('description'){{$message}}@enderror</span>
             </div>
             <br>
             <div class="form-group">
-                <label for="">Afbeelding</label>
+                <label for="">Afbeelding <span class="text-danger">*</span></label>
                 <input type="file" class="form-control" name="image">
                 <span class="text-danger">@error('image'){{$message}}@enderror</span>
             </div>
             <br>
             <div class="form-group">
-                <label for="">Workout</label>
+                <label for="">Workout <span class="text-danger">*</span></label>
                 <div id="editor" style="height: 500px">
                 </div>
                 <textarea name="workout" id="workout" hidden cols="30" rows="10">

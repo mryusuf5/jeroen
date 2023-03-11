@@ -16,7 +16,7 @@
                 <div class="carousel-inner">
                     @foreach($images as $index => $image)
                     <div class="carousel-item @if($index == 0) active @endif ">
-                        <img src="{{asset('images/' . $image->image_path)}}" class="d-block w-100">
+                        <img src="{{asset('images/carousel/' . $image->image_path)}}" class="d-block w-100">
                     </div>
                     @endforeach
                 </div>

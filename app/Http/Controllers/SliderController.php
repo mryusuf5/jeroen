@@ -45,7 +45,7 @@ class SliderController extends Controller
         $filename = str_replace(' ', '_', $file->getClientOriginalName());
         $filenameWithoutExt = explode('.', $filename)[0];
 
-        $file->move('images/', $filename);
+        $file->move('images/carousel/', $filename);
 
         $carousel = new SliderImages();
         $carousel->image_name = $filenameWithoutExt;
