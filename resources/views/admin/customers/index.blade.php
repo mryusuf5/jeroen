@@ -36,21 +36,22 @@
                         <td>{{$customer->firstname}}</td>
                         <td>{{$customer->lastname}}</td>
                         <td>{{$customer->email}}</td>
-                        <td>{{$customer->phone_number}}</td>
+                        <td class="text-info">{{$customer->phone_number}}</td>
                         <td>
-                            <div class="dropdown">
-                                <a href="" class="" data-bs-toggle="dropdown">
-                                    <i class="fa-solid fa-ellipsis-vertical text-info fs-3"></i>
-                                </a>
-                                <ul class="dropdown-menu">
-                                   <li>
-                                       <a href="{{route('admin.customers.edit', $customer->id)}}"
-                                          class="dropdown-item text-info">
-                                           Aanpassen
-                                       </a>
-                                   </li>
-                                </ul>
-                            </div>
+                            <a href="{{route('admin.customers.edit', $customer->id)}}" class="btn btn-info">Aanpassen</a>
+{{--                            <div class="dropdown">--}}
+{{--                                <a href="#" class="" data-bs-toggle="dropdown">--}}
+{{--                                    <i class="fa-solid fa-ellipsis-vertical text-info fs-3"></i>--}}
+{{--                                </a>--}}
+{{--                                <ul class="dropdown-menu">--}}
+{{--                                   <li>--}}
+{{--                                       <a href="{{route('admin.customers.edit', $customer->id)}}"--}}
+{{--                                          class="dropdown-item text-info">--}}
+{{--                                           Aanpassen--}}
+{{--                                       </a>--}}
+{{--                                   </li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
                         </td>
                     </tr>
                 @endforeach

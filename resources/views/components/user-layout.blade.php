@@ -53,7 +53,7 @@
                         <a class="nav-link text-white" href="#">Over mij</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Contact</a>
+                        <a class="nav-link text-white" href="#">Verkoop</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{route('wirkenWorkouts')}}">Wirken workouts</a>
