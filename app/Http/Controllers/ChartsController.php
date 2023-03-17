@@ -41,12 +41,12 @@ class ChartsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'customer' => 'required',
+            'customer_id' => 'required',
             'weight' => 'required',
             'fat_percentage' => 'required'
         ]);
 
-        $customer = Customers::where('id', $request->customer)->first();
+        $customer = Customers::where('id', $request->customer_id)->first();
 
         $chart = new Charts();
 
@@ -55,13 +55,22 @@ class ChartsController extends Controller
 
         $chart->save();
 
-        $chartData = new ChartData();
-        $chartData->weight = $request->weight;
-        $chartData->fat_percentage = $request->fat_percentage;
-        $chartData->customer_id = $request->customer;
-        $chartData->chart_id = $chart->id;
+        $weight = str_replace(',', '.', $request->weight);
+        $fat_percentage = str_replace(',', '.', $request->fat_percentage);
 
-        $chartData->save();
+        $chart_data = new ChartData();
+
+        if($request->date)
+        {
+            $chart_data->created_at = $request->date;
+        }
+
+        $chart_data->chart_id = $chart->id;
+        $chart_data->customer_id = $request->customer_id;
+        $chart_data->weight = $weight;
+        $chart_data->fat_percentage = $fat_percentage;
+
+        $chart_data->save();
 
         return redirect()->route('admin.charts.index')->with('success', 'Grafiek opgesteld');
     }
@@ -98,12 +107,20 @@ class ChartsController extends Controller
 
         $chart = Charts::where('id', $id)->first();
 
+        $weight = str_replace(',', '.', $request->weight);
+        $fat_percentage = str_replace(',', '.', $request->fat_percentage);
+
         $chart_data = new ChartData();
+
+        if($request->date)
+        {
+            $chart_data->created_at = $request->date;
+        }
 
         $chart_data->chart_id = $chart->id;
         $chart_data->customer_id = $request->customer_id;
-        $chart_data->weight = $request->weight;
-        $chart_data->fat_percentage = $request->fat_percentage;
+        $chart_data->weight = $weight;
+        $chart_data->fat_percentage = $fat_percentage;
         $chart_data->save();
 
         return redirect()->route('admin.charts.edit', $id)->with('success', 'Grafiek aangepast');

@@ -23,9 +23,14 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="">Gewicht in kg <span class="text-danger">*</span></label>
+                    <label for="">Vet percentage <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" name="fat_percentage">
                     <span class="text-danger">@error('fat_percentage'){{$message}}@enderror</span>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="">Datum</label>
+                    <input type="date" class="form-control" name="date">
                 </div>
                 <br>
                 <div class="form-group">

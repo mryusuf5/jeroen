@@ -1,5 +1,5 @@
 <x-user-layout>
-    <div class="bg-dark workoutsBackground singleWorkoutBackground">
+    <div class="bg-dark">
         <br>
         <div class="container border border-info">
             <div class="d-flex justify-content-center">

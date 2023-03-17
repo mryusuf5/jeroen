@@ -6,7 +6,7 @@
             @method('POST')
             <div class="form-group">
                 <label for="">Selecteer een klant <span class="text-danger">*</span></label>
-                <select name="customer" class="form-control">
+                <select name="customer_id" class="form-control">
                     <option value="">Selecteer een klant</option>
                     @foreach($customers as $customer)
                         <option value="{{$customer->id}}">{{$customer->firstname . ' ' . $customer->lastname}}</option>
@@ -25,6 +25,11 @@
                 <label for="">Vet percentage <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" name="fat_percentage">
                 <span class="text-danger">@error('fat_percentage'){{$message}}@enderror</span>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="">Datum</label>
+                <input type="date" class="form-control" name="date">
             </div>
             <br>
             <div class="form-group">

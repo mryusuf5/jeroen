@@ -11,7 +11,7 @@
     <div class="row g-2 justify-content-lg-start justify-content-center">
         @foreach($workouts as $workout)
             <div class="card col-lg-4 col-10">
-                <img src="{{asset('images/' . $workout->image_path)}}" class="card-image-top" alt="">
+                <img src="{{asset('images/workouts/' . $workout->image_path)}}" class="card-image-top" alt="">
                 <div class="card-body">
                     <h5 class="card-title">{{$workout->title}}</h5>
                     <div class="d-flex justify-content-between">

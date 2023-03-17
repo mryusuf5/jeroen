@@ -19,7 +19,7 @@
                     <div class="text-white d-flex align-items-md-center align-items-start
                      flex-md-row flex-column gap-2 border border-info rounded p-1 justify-content-end">
                         <div>
-                            <h2><a href="{{route('singleWorkout', $workout->id)}}" class="text-info">{{$workout->title}}</a></h2>
+                            <h2><a href="{{route('singleWorkout', $workout->id)}}" class="text-info text-end">{{$workout->title}}</a></h2>
                             <div>{{$workout->description}}</div>
                         </div>
                         <div>
