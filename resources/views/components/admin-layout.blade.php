@@ -93,10 +93,17 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" class="menu-link gap-2 position-relative">
+                    <a href="{{route('admin.contact_messages.index')}}" class="menu-link gap-2 position-relative">
                         <i class="fa-solid fa-envelope text-info"></i>
                         <div class="position-relative">
-                            Contact berichten <span class="badge rounded-pill bg-danger">9+</span>
+                            Contact berichten
+                            <span class="badge rounded-pill bg-danger">
+                                @if(count($contact_messages) < 9)
+                                    {{count($contact_messages)}}
+                                @else
+                                    9+
+                                @endif
+                            </span>
                         </div>
                     </a>
                 </li>

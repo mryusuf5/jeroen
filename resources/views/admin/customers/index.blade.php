@@ -38,20 +38,19 @@
                         <td>{{$customer->email}}</td>
                         <td class="text-info">{{$customer->phone_number}}</td>
                         <td>
-                            <a href="{{route('admin.customers.edit', $customer->id)}}" class="btn btn-info">Aanpassen</a>
-{{--                            <div class="dropdown">--}}
-{{--                                <a href="#" class="" data-bs-toggle="dropdown">--}}
-{{--                                    <i class="fa-solid fa-ellipsis-vertical text-info fs-3"></i>--}}
-{{--                                </a>--}}
-{{--                                <ul class="dropdown-menu">--}}
-{{--                                   <li>--}}
-{{--                                       <a href="{{route('admin.customers.edit', $customer->id)}}"--}}
-{{--                                          class="dropdown-item text-info">--}}
-{{--                                           Aanpassen--}}
-{{--                                       </a>--}}
-{{--                                   </li>--}}
-{{--                                </ul>--}}
-{{--                            </div>--}}
+                            <div class="dropdown">
+                                <a class="text-info fs-3" type="button" data-bs-toggle="dropdown">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item text-info"
+                                           href="{{route('admin.customers.edit', $customer->id)}}">
+                                            Aanpassen
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </td>
                     </tr>
                 @endforeach

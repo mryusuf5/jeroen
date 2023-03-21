@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ChartsController;
+use App\Http\Controllers\ContactMessagesController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UserController;
@@ -24,6 +25,8 @@ Route::get('/wirken-workouts', [WorkoutsController::class, 'welcome'])->name('wi
 
 Route::get('/wirken-workouts/{workout}', [WorkoutsController::class, 'show'])->name('singleWorkout');
 
+Route::post('contact_messages', [ContactMessagesController::class, 'store'])->name('storeMessage');
+
 Route::get('/login', function (){
     return view('admin.login');
 })->name('login');
@@ -40,4 +43,5 @@ Route::prefix('/admin')->name('admin.')->middleware('admin')->group(function(){
     Route::resource('workouts', WorkoutsController::class);
     Route::resource('customers', CustomersController::class);
     Route::resource('charts', ChartsController::class);
+    Route::resource('contact_messages', ContactMessagesController::class);
 });

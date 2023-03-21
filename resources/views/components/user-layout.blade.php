@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/futuristicCard.css')}}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script src="{{asset('js/bootstrap.bundle.js')}}"></script>
     <script src="https://kit.fontawesome.com/e0462e4fee.js" crossorigin="anonymous"></script>
-    <title>Jeroen Wirken</title>
+    <title>Wirken Sports</title>
 </head>
 <body>
     <div class="bg-primary d-flex p-1 justify-content-around">
@@ -39,7 +40,7 @@
     </div>
     <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand text-white" href="{{route('home')}}">Jeroen wirken</a>
+            <a class="navbar-brand text-white" href="{{route('home')}}">Jeroen Wirken</a>
             <button class="navbar-toggler border border-white" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent">
                 <span class="text-white"><i class="fa-solid fa-bars"></i></span>
