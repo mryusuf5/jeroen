@@ -16,13 +16,24 @@
                 <canvas id="chart{{$chart->id}}"></canvas>
                 <br>
                 <div class="d-flex justify-content-between">
-                    <a href="{{route('admin.charts.edit', $chart->id)}}" class="btn btn-info">Bekijken</a>
                     <h5 class="">{{$chart->firstname . " " . $chart->lastname}}</h5>
-                    <form action="{{route('admin.charts.destroy', $chart->id)}}" class="confirmForm" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit" class="btn btn-danger" value="Verwijderen">
-                    </form>
+                    <div class="dropdown">
+                        <a class="text-info fs-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="{{route('admin.charts.edit', $chart->id)}}" class="dropdown-item text-info">Bekijken</a>
+                            </li>
+                            <li>
+                                <form action="{{route('admin.charts.destroy', $chart->id)}}" class="confirmForm" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="submit" class="dropdown-item text-danger" value="Verwijderen">
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         @endforeach

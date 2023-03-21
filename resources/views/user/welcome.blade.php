@@ -4,18 +4,15 @@
         <div class="container">
             <div id="carouselExampleIndicators" class="carousel slide border border-info" data-bs-ride="carousel">
                 <div class="carousel-indicators">
+                    @foreach($images as $index => $image)
                     <button type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide-to="0" class="active"></button>
-
-                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide-to="1"></button>
-
-                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide-to="2"></button>
+                            data-bs-slide-to="{{$index}}" class="active"></button>
+                    @endforeach
                 </div>
                 <div class="carousel-inner">
                     @foreach($images as $index => $image)
                     <div class="carousel-item @if($index == 0) active @endif ">
+                        <img height="150" class="position-absolute watermark" src="{{asset('images/updatedLogo.png')}}" alt="">
                         <img src="{{asset('images/carousel/' . $image->image_path)}}" class="d-block w-100">
                     </div>
                     @endforeach
@@ -53,7 +50,7 @@
                 <p class="text-white"><i class="fa-solid fa-person-circle-check text-info"></i> Persoonlijke aanpak</p>
                 <p class="text-white fw-bold"><i class="fa-solid fa-check text-info"></i> Voor alle niveau's en leeftijden</p>
                 <div>
-                    <a href="" class="btn btn-info col-lg-5 col-12 rounded-pill text-white">Contacteer mij!</a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info col-lg-5 col-12 rounded-pill text-white">Contacteer mij!</a>
                 </div>
             </div>
             <div class="heroImage col-lg-1 col-10"></div>
@@ -90,4 +87,67 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Jeroen contacteren</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="post" id="contactForm" action="{{route('storeMessage')}}">
+                @csrf
+                @method('POST')
+                <div class="modal-body d-flex flex-column gap-2">
+                    <div class="form-group">
+                        <label for="">Voornaam</label>
+                        <input type="text" class="form-control contactInput" name="firstname">
+                        <span class="text-danger" id="errorfirstname">@error('firstname'){{$message}}@enderror</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Achternaam</label>
+                        <input type="text" class="form-control contactInput" name="lastname">
+                        <span class="text-danger" id="errorlastname">@error('lastname'){{$message}}@enderror</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email adres</label>
+                        <input type="email" class="form-control contactInput" name="email">
+                        <span class="text-danger" id="erroremail">@error('email'){{$message}}@enderror</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Telefoon nummer</label>
+                        <input type="number" class="form-control contactInput" name="phone_number">
+                        <span class="text-danger" id="errorphone_number">@error('phone_number'){{$message}}@enderror</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Bericht</label>
+                        <textarea name="message" class="form-control contactInput errormessage" cols="30" rows="10"></textarea>
+                        <span class="text-danger" id="errormessage">@error('message'){{$message}}@enderror</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" value="Verstuur bericht" class="btn btn-info text-white">
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script>
+        @if($message = Session::get('success'))
+            Toastify({
+                text: "{{$message}}",
+                duration: 5000,
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "center", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: '#0DCAF0'
+                },
+                onClick: function(){} // Callback after click
+            }).showToast();
+        @endif
+    </script>
 </x-user-layout>
