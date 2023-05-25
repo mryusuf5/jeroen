@@ -22,7 +22,14 @@
                     <tr>
                         <th>#</th>
                         <th>Naam</th>
-                        <th>@if($workout->type == 0) Tijd @elseif($workout->type == 1) Afstand @endif</th>
+                        <th>
+                            @if($workout->type == 0)
+                                Tijd
+                            @elseif($workout->type == 1)
+                                Afstand
+                            @elseif($workout->type == 2)
+                                Repetitions
+                            @endif</th>
                         <th>Opmerking</th>
                         <th></th>
                     </tr>
@@ -33,7 +40,6 @@
                         <td>
                             @if($index === 0)
                                 <img width="50" src="{{asset('images/1st.png')}}" alt="">
-{{--                                <span style="color: #c9b037">{{$index + 1}}</span>--}}
                             @elseif($index === 1)
                                 <img width="50" src="{{asset('images/2nd.png')}}" alt="">
                             @elseif($index === 2)
@@ -111,7 +117,9 @@
 {{--                                            }--}}
 {{--                                    }--}}
 {{--                                @endphp--}}
-                                {{$leaderboard->seconds}} meters;
+                                {{$leaderboard->seconds}} meters
+                            @elseif($workout->type == 2)
+                                {{$leaderboard->seconds}} repetitions
                             @endif
                         </td>
                         <td>{!! $leaderboard->remark !!}</td>
@@ -174,6 +182,11 @@
                             </div>
                             <div class="form-group" id="meters">
                                 <label for="">Meters</label>
+                                <input type="number" name="seconds" class="form-control">
+                            </div>
+                        @elseif($workout->type == 2)
+                            <div class="form-group" id="repetitions">
+                                <label for="">Repetitions</label>
                                 <input type="number" name="seconds" class="form-control">
                             </div>
                         @endif

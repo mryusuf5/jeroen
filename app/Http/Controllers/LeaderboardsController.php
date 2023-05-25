@@ -59,6 +59,11 @@ class LeaderboardsController extends Controller
             $leaderboard->seconds = $request->seconds;
             $leaderboard->time = $request->seconds;
         }
+        else if ($workout->type == 2)
+        {
+            $leaderboard->seconds = $request->seconds;
+            $leaderboard->time = $request->seconds;
+        }
 
         $leaderboard->remark = $request->remark;
         $leaderboard->workout_id = $request->workout_id;

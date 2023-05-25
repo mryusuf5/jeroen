@@ -6,6 +6,7 @@ use App\Models\Customers;
 use App\Models\leaderboards;
 use App\Models\Workouts;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class WorkoutsController extends Controller
 {
@@ -67,18 +68,30 @@ class WorkoutsController extends Controller
     {
         $workout = Workouts::where('id', $id)->first();
         $customers = Customers::all();
-        if($workout->type == 0)
+        if($workout->type == 0 || $workout->type == 1)
         {
             $leaderboards = leaderboards::where('workout_id',  $id)->join('customers', 'customers.id', '=', 'leaderboards.customer_id')
                 ->select('leaderboards.*', 'customers.firstname', 'customers.lastname', 'customers.image_path')
                 ->orderby('leaderboards.time', 'ASC')
                 ->get();
         }
-        else if($workout->type == 1)
+        else if($workout->type == 2)
         {
             $leaderboards = leaderboards::where('workout_id',  $id)->join('customers', 'customers.id', '=', 'leaderboards.customer_id')
-                ->select('leaderboards.*', 'customers.firstname', 'customers.lastname', 'customers.image_path')
-                ->orderby('leaderboards.time', 'ASC')
+                ->select(
+                    'customers.firstname',
+                    'customers.lastname',
+                    'customers.image_path',
+                    'leaderboards.id',
+                    'leaderboards.customer_id',
+                    'leaderboards.workout_id',
+                    'leaderboards.time',
+                    DB::raw('CAST(leaderboards.seconds AS INT) as seconds'),
+                    'leaderboards.remark',
+                    'leaderboards.anonymous',
+                    'leaderboards.created_at',
+                )
+                ->orderby('seconds', 'DESC')
                 ->get();
         }
 
