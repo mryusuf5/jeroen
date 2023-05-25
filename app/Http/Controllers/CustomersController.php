@@ -12,7 +12,7 @@ class CustomersController extends Controller
      */
     public function index()
     {
-        $customers = Customers::all();
+        $customers = Customers::sortable()->get();
 
         return view('admin.customers.index', compact('customers'));
     }

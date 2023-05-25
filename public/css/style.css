@@ -7,6 +7,15 @@
     background-position: center;
 }
 
+.heroImage2{
+    background-image: radial-gradient(circle, transparent, #212529), url("../images/jeroen3.jpg");
+    width: 40%;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 .reviewContainer{
     transition: .25s ease-out;
 }
@@ -24,6 +33,13 @@
     width: 100%;
 }
 
+.watermark{
+    width: 150px;
+    bottom: 0;
+    right: 0;
+}
+
+
 @media only screen and (max-width: 992px) {
     .heroImage{
         width: 100%;
@@ -34,11 +50,15 @@
     .singleWorkoutBackground{
         height: 100vh;
     }
+    .watermark{
+        width: 75px;
+    }
 }
 
 @media only screen and (min-width: 992px) {
     .carousel-inner{
-        height: 800px !important;
+        height: 700px !important;
+        width: 900px !important;
     }
 
     .workoutsBackground{
@@ -48,4 +68,21 @@
     .singleWorkoutImage{
         width: 500px;
     }
+}
+
+.workoutBody > *{
+    color: white !important;
+}
+
+.workoutBody p{
+    color: white !important;
+}
+
+.workoutBody p span{
+    color: white !important;
+}
+
+.leaderboardWinner{
+    font-family: "Dancing Script", cursive !important;
+    font-size: 1.5rem;
 }

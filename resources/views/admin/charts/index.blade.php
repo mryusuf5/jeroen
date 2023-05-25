@@ -1,6 +1,4 @@
 <x-admin-layout>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
-
     <h2>Grafieken opstellen</h2>
     @if($message = Session::get('success'))
         <div class="alert alert-info">
@@ -39,10 +37,14 @@
         @endforeach
     </div>
 
+
+    @section('scriptsTop')
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
+    @endsection
     <script>
         @foreach($charts as $chart)
 
-            new Chart(document.getElementById('chart{{$chart->id}}'), {
+            let chart = new Chart(document.getElementById('chart{{$chart->id}}'), {
                 type: 'line',
                 data: {
                     labels: [

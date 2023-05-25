@@ -26,23 +26,24 @@
     />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="{{asset('css/admin/core.css')}}" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="{{asset('css/admin/theme-default.css')}}" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="{{asset('css/admin/demo.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/admin/style.css')}}" />
+    <link rel="stylesheet" href="https://jeroen.yusufyildiz.nl/css/admin/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="https://jeroen.yusufyildiz.nl/css/admin/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="https://jeroen.yusufyildiz.nl/css/admin/demo.css" />
+    <link rel="stylesheet" href="https://jeroen.yusufyildiz.nl/css/admin/style.css" />
 {{--    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">--}}
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="{{asset('css/admin/perfect-scrollbar.css')}}" />
+    <link rel="stylesheet" href="https://jeroen.yusufyildiz.nl/css/admin/perfect-scrollbar.css" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="{{asset('js/admin/helpers.js')}}"></script>
+    <script src="https://jeroen.yusufyildiz.nl/js/admin/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="{{asset('js/admin/config.js')}}"></script>
+    <script src="https://jeroen.yusufyildiz.nl/js/admin/config.js"></script>
+    @yield('scriptsTop')
 </head>
 
 <body>
@@ -68,6 +69,12 @@
 
             <ul class="menu-inner py-1">
                 <!-- Dashboard -->
+                <li class="menu-item">
+                    <a href="{{route('home')}}" class="menu-link gap-2">
+                        <i class="fa-solid fa-globe text-info"></i>
+                        <div data-i18n="Analytics">Website</div>
+                    </a>
+                </li>
                 <li class="menu-item">
                     <a href="{{route('admin.carousel.index')}}" class="menu-link gap-2">
                         <i class="fa-solid fa-image text-info"></i>
@@ -146,13 +153,14 @@
     <div class="layout-overlay layout-menu-toggle"></div>
 </div>
 
-<script src="{{asset('js/admin/jquery.js')}}"></script>
-<script src="{{asset('js/admin/popper.js')}}"></script>
-<script src="{{asset('js/admin/bootstrap.js')}}"></script>
-<script src="{{asset('js/admin/perfect-scrollbar.js')}}"></script>
-<script src="{{asset('js/admin/menu.js')}}"></script>
-<script src="{{asset('js/admin/main.js')}}"></script>
+@yield('scripts')
+<script src="https://jeroen.yusufyildiz.nl/js/admin/jquery.js"></script>
+<script src="https://jeroen.yusufyildiz.nl/js/admin/popper.js"></script>
+<script src="https://jeroen.yusufyildiz.nl/js/admin/bootstrap.js"></script>
+<script src="https://jeroen.yusufyildiz.nl/js/admin/perfect-scrollbar.js"></script>
+<script src="https://jeroen.yusufyildiz.nl/js/admin/menu.js"></script>
+<script src="https://jeroen.yusufyildiz.nl/js/admin/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="{{asset('js/admin/script.js')}}"></script>
+<script src="https://jeroen.yusufyildiz.nl/js/admin/script.js"></script>
 </body>
 </html>

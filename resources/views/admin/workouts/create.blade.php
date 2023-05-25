@@ -13,8 +13,23 @@
             <br>
             <div class="form-group">
                 <label for="">Beschrijving <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" name="description" value="{{old('description')}}">
+{{--                <input type="text" class="form-control" name="description" value="{{old('description')}}">--}}
+                <div id="editor2" style="height: 500px">
+                </div>
+                <textarea name="description" id="description" hidden cols="30" rows="10">
+                </textarea>
                 <span class="text-danger">@error('description'){{$message}}@enderror</span>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="">Workout type</label>
+                <select name="type" id="" class="form-select">
+                    <option value="">Selecteer type</option>
+                    <option value="0">Tijd (minutes, seconden)</option>
+                    <option value="1">Afstand (meters)</option>
+                    <option value="2">Reps (rounds, reps)</option>
+                </select>
+                <span class="text-danger">@error('type'){{$message}}@enderror</span>
             </div>
             <br>
             <div class="form-group">
@@ -22,14 +37,14 @@
                 <input type="file" class="form-control" name="image">
                 <span class="text-danger">@error('image'){{$message}}@enderror</span>
             </div>
-            <br>
-            <div class="form-group">
-                <label for="">Workout <span class="text-danger">*</span></label>
-                <div id="editor" style="height: 500px">
-                </div>
-                <textarea name="workout" id="workout" hidden cols="30" rows="10">
-                </textarea>
-            </div>
+{{--            <br>--}}
+{{--            <div class="form-group">--}}
+{{--                <label for="">Workout <span class="text-danger">*</span></label>--}}
+{{--                <div id="editor" style="height: 500px">--}}
+{{--                </div>--}}
+{{--                <textarea name="workout" id="workout" hidden cols="30" rows="10">--}}
+{{--                </textarea>--}}
+{{--            </div>--}}
             <br>
             <div class="form-group">
                 <input type="submit" class="btn btn-info" value="Toevoegen">
@@ -40,7 +55,11 @@
         const form = document.querySelector('#newWorkoutForm');
 
         form.addEventListener('submit', function() {
-            document.querySelector('#workout').value = quill.root.innerHTML;
+            document.querySelector('#description').value = quill2.root.innerHTML;
+        })
+
+        var quill2 = new Quill('#editor2', {
+            theme: 'snow'
         })
     </script>
 </x-admin-layout>

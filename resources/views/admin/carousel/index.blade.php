@@ -11,7 +11,7 @@
     <div class="images row g-0 justify-content-center gap-2">
         @foreach($images as $image)
             <div class="d-flex flex-column gap-2 col-md-3 col-10">
-                <img src="{{asset('images/' . $image->image_path)}}" class="object-fit-cover" alt="">
+                <img src="{{asset('images/carousel/' . $image->image_path)}}" class="object-fit-cover" alt="">
                 <form action="{{route('admin.carousel.destroy', $image->id)}}" method="post" class="confirmForm">
                     @csrf
                     @method('DELETE')

@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('workouts', function (Blueprint $table) {
+        Schema::create('leaderboards', function (Blueprint $table) {
             $table->id();
-            $table->text('image_path');
-            $table->string('title');
-            $table->text('body')->nullable();
-            $table->text('description');
-            $table->integer('type');
+            $table->integer('customer_id');
+            $table->integer('workout_id');
+            $table->string('time');
+            $table->text('seconds');
+            $table->text('remark')->nullable();
+            $table->tinyInteger('anonymous')->default(0);
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('leaderboards');
     }
 };
