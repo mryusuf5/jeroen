@@ -1,7 +1,7 @@
 <x-user-layout>
     <div class="bg-dark z-0">
         <br>
-        <div class="container">
+        <div class="container d-flex justify-content-center">
             <div id="carouselExampleIndicators" class="carousel slide border border-info" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     @foreach($images as $index => $image)
@@ -12,10 +12,10 @@
                 <div class="carousel-inner">
                     @foreach($images as $index => $image)
                     <div class="carousel-item @if($index == 0) active @endif ">
-                        <img height="150" class="position-absolute watermark" src="{{asset('images/updatedLogo.png')}}" alt="">
                         <img src="{{asset('images/carousel/' . $image->image_path)}}" class="d-block w-100">
                     </div>
                     @endforeach
+                    <img class="position-absolute watermark" src="{{asset('images/logo.png')}}" alt="">
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -44,7 +44,7 @@
         <div class="row g-0 justify-content-center gap-4 mt-4">
             <div class="col-lg-5 col-10">
                 <h2 class="text-white mb-2">Personal training <span class="text-info">en meer</span></h2>
-                <p class="text-white"><i class="fa-solid fa-people-arrows text-info"></i> 1 op 1 personal training</p>
+                <p class="text-white"><i class="fa-solid fa-people-arrows text-info"></i> Personal training / small group training</p>
                 <p class="text-white"><i class="fa-solid fa-calculator text-info"></i> Individuele begeleiding op maat</p>
                 <p class="text-white"><i class="fa-solid fa-apple-whole text-info"></i> Gepersonaliseerd voedingsadvies</p>
                 <p class="text-white"><i class="fa-solid fa-person-circle-check text-info"></i> Persoonlijke aanpak</p>
@@ -53,11 +53,20 @@
                     <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info col-lg-5 col-12 rounded-pill text-white">Contacteer mij!</a>
                 </div>
             </div>
-            <div class="heroImage col-lg-1 col-10"></div>
+            <div class="heroImage col-lg-5 col-10"></div>
         </div>
         <br>
         <br>
         <br>
+        <div class="container">
+            <div class="row">
+                <h3 class="text-info text-center">Over mij</h3>
+                <div class="col-6">
+
+                </div>
+                <div class="heroImage2 col-lg-5 col-10"></div>
+            </div>
+        </div>
         <div class="container">
             <div class="row gap-2 justify-content-center g-0">
                 <h3 class="text-info text-center mb-3">Reviews van klanten</h3>

@@ -13,9 +13,9 @@
             <thead>
                 <tr>
                     <th>Afbeelding</th>
-                    <th>Voornaam</th>
-                    <th>Achternaam</th>
-                    <th>Email</th>
+                    <th>@sortablelink('firstname', 'Voornaam')</th>
+                    <th>@sortablelink('lastname', 'Achternaam')</th>
+                    <th>@sortablelink('Email', 'Email')</th>
                     <th>Tel. nummer</th>
                 </tr>
             </thead>

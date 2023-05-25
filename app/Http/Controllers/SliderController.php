@@ -10,7 +10,7 @@ use Illuminate\View\View;
 class SliderController extends Controller
 {
 
-    public function welcome()
+    public function welcome(): View
     {
         $images = SliderImages::all();
         return view('user.welcome', compact('images'));

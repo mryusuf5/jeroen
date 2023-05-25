@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customers;
+use App\Models\leaderboards;
 use App\Models\Workouts;
 use Illuminate\Http\Request;
 
@@ -38,8 +40,8 @@ class WorkoutsController extends Controller
         $request->validate([
             'title' => 'required',
             'image' => 'required',
-            'workout' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'type' => 'required'
         ]);
 
         $file = $request->file('image');
@@ -51,6 +53,8 @@ class WorkoutsController extends Controller
         $workout->body = $request->workout;
         $workout->image_path = $filename;
         $workout->description = $request->description;
+        $workout->type = $request->type;
+
         $workout->save();
 
         return redirect()->route('admin.workouts.index')->with('success', 'Workout aangemaakt');
@@ -62,8 +66,24 @@ class WorkoutsController extends Controller
     public function show(string $id)
     {
         $workout = Workouts::where('id', $id)->first();
+        $customers = Customers::all();
+        if($workout->type == 0)
+        {
+            $leaderboards = leaderboards::where('workout_id',  $id)->join('customers', 'customers.id', '=', 'leaderboards.customer_id')
+                ->select('leaderboards.*', 'customers.firstname', 'customers.lastname', 'customers.image_path')
+                ->orderby('leaderboards.time', 'ASC')
+                ->get();
+        }
+        else if($workout->type == 1)
+        {
+            $leaderboards = leaderboards::where('workout_id',  $id)->join('customers', 'customers.id', '=', 'leaderboards.customer_id')
+                ->select('leaderboards.*', 'customers.firstname', 'customers.lastname', 'customers.image_path')
+                ->orderby('leaderboards.time', 'ASC')
+                ->get();
+        }
 
-        return view('user.wirkenWorkout', compact('workout'));
+
+        return view('user.wirkenWorkout', compact('workout', 'customers', 'leaderboards'));
     }
 
     /**
@@ -83,7 +103,8 @@ class WorkoutsController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'type' => 'required'
         ]);
 
         $workout = Workouts::find($id);
@@ -98,6 +119,8 @@ class WorkoutsController extends Controller
         $workout->title = $request->title;
         $workout->body = $request->workout;
         $workout->description = $request->description;
+        $workout->type = $request->type;
+
         $workout->update();
 
         return redirect()->route('admin.workouts.index')->with('success', 'Workout aangepast');
