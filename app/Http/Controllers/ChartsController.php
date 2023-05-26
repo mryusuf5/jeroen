@@ -18,7 +18,10 @@ class ChartsController extends Controller
 
         foreach($charts as $index => $chart)
         {
-            $chart_data = ChartData::where('chart_id', $chart['id'])->get();
+            $chart_data = ChartData::where('chart_id', $chart['id'])
+                ->limit(3)
+                ->orderBy('created_at', 'DESC')
+                ->get();
             $charts[$index]['chart_data'] = $chart_data;
         }
 
@@ -72,7 +75,7 @@ class ChartsController extends Controller
 
         $chart_data->save();
 
-        return redirect()->route('admin.charts.index')->with('success', 'Grafiek opgesteld');
+        return redirect()->route('admin.charts.index', ['chartType' => 'bars'])->with('success', 'Grafiek opgesteld');
     }
 
     /**
@@ -90,7 +93,9 @@ class ChartsController extends Controller
     {
         $chart = Charts::where('id', $id)->first();
 
-        $chart['chart_data'] = ChartData::where('chart_id', $id)->get();
+        $chart['chart_data'] = ChartData::where('chart_id', $id)
+            ->orderBy('created_at', 'ASC')
+            ->get();
 
         return view('admin.charts.edit', compact('chart'));
     }
@@ -135,6 +140,6 @@ class ChartsController extends Controller
         $chart_data = ChartData::where('chart_id', $id);
         $chart_data->delete();
 
-        return redirect()->route('admin.charts.index')->with('success', 'Grafiek verwijderd');
+        return redirect()->route('admin.charts.index', ['chartType' => 'bars'])->with('success', 'Grafiek verwijderd');
     }
 }

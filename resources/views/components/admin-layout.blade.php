@@ -43,7 +43,7 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="https://jeroen.yusufyildiz.nl/js/admin/config.js"></script>
-    @yield('scriptsTop')
+    @yield('scriptTop')
 </head>
 
 <body>
@@ -94,7 +94,7 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="{{route('admin.charts.index')}}" class="menu-link gap-2">
+                    <a href="{{route('admin.charts.index', ['chartType' => 'bars'])}}" class="menu-link gap-2">
                         <i class="fa-solid fa-chart-line text-info"></i>
                         <div>Grafieken</div>
                     </a>
@@ -153,7 +153,7 @@
     <div class="layout-overlay layout-menu-toggle"></div>
 </div>
 
-@yield('scripts')
+@yield('scriptBottom')
 <script src="https://jeroen.yusufyildiz.nl/js/admin/jquery.js"></script>
 <script src="https://jeroen.yusufyildiz.nl/js/admin/popper.js"></script>
 <script src="https://jeroen.yusufyildiz.nl/js/admin/bootstrap.js"></script>
