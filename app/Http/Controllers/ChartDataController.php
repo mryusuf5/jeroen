@@ -58,8 +58,10 @@ class ChartDataController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ChartData $chartData)
+    public function destroy($id)
     {
-        //
+        ChartData::destroy($id);
+
+        return redirect()->back()->with('success', 'Data verwijderd');
     }
 }

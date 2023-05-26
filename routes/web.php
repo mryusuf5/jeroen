@@ -7,6 +7,7 @@ use App\Http\Controllers\LeaderboardsController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkoutsController;
+use App\Http\Controllers\ChartDataController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,4 +47,5 @@ Route::prefix('/admin')->name('admin.')->middleware('admin')->group(function(){
     Route::resource('charts', ChartsController::class);
     Route::resource('contact_messages', ContactMessagesController::class);
     Route::resource('leaderboards', LeaderboardsController::class);
+    Route::resource('chart_data', ChartDataController::class);
 });
