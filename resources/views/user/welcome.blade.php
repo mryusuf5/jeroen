@@ -1,5 +1,5 @@
 <x-user-layout>
-    <div class="bg-dark z-0">
+    <div class="checkered z-0">
         <br>
         <div class="container d-flex justify-content-center">
             <div id="carouselExampleIndicators" class="carousel slide border border-info" data-bs-ride="carousel">
@@ -17,11 +17,13 @@
                     @endforeach
                     <img class="position-absolute watermark" src="{{asset('images/logo.png')}}" alt="">
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -41,35 +43,85 @@
             </div>
         </div>
         <br>
-        <div class="row g-0 justify-content-center gap-4 mt-4">
-            <div class="col-lg-5 col-10">
-                <h2 class="text-white mb-2">Personal training <span class="text-info">en meer</span></h2>
-                <p class="text-white"><i class="fa-solid fa-people-arrows text-info"></i> Personal training / small group training</p>
-                <p class="text-white"><i class="fa-solid fa-calculator text-info"></i> Individuele begeleiding op maat</p>
-                <p class="text-white"><i class="fa-solid fa-apple-whole text-info"></i> Gepersonaliseerd voedingsadvies</p>
-                <p class="text-white"><i class="fa-solid fa-person-circle-check text-info"></i> Persoonlijke aanpak</p>
-                <p class="text-white fw-bold"><i class="fa-solid fa-check text-info"></i> Voor alle niveau's en leeftijden</p>
-                <div>
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info col-lg-5 col-12 rounded-pill text-white">Contacteer mij!</a>
+
+        <div class="container" id="over-mij">
+            <div class="row justify-content-center gap-2">
+                <h3 class="text-info text-center">Over mij</h3>
+                <hr>
+                <div class="col-lg-6 col-12">
+                    <p class="fs-3">
+                        Welkom op mijn personal training website!
+                        <br>
+                        Ik ben <span class="text-info">Jeroen Wirken</span>, een gepassioneerde personal trainer, judoka en instructeur.
+                        <br>
+                        Met mijn brede kennis en ervaring in vechtsporten en fitness help ik mensen om hun fysieke
+                        doelen te bereiken en hun kracht en vaardigheden te ontwikkelen.
+                    </p>
                 </div>
+                <div class="heroImage2 col-lg-5 col-12"></div>
+                <div class="heroImage3 col-lg-5 col-12"></div>
+                <div class="col-lg-6 col-12">
+                    <p class="fs-3">
+                        Als judoka ben ik trots op mijn zwarte band 2de dan.
+                        <br>
+                        Ik heb jarenlang intensief getraind en meegedaan aan judowedstrijden, waarbij ik mijn techniek
+                        en doorzettingsvermogen heb verfijnd.
+                        <br>
+                        Daarnaast heb ik ook vier MMA-gevechten gewonnen met indrukwekkende finishes.
+                    </p>
+                </div>
+                <div class="col-12">
+                    <p class="fs-3">
+                        Ik geef ook judoles aan kinderen, omdat ik geloof dat judo hen helpt bij het ontwikkelen van
+                        discipline, respect en zelfvertrouwen.
+                        <br>
+                        Daarnaast bied ik personal training aan, aangepast aan jouw doelen en behoeften.
+                        <br>
+                        Neem gerust contact met me op voor meer informatie of om een persoonlijke trainingsessie
+                        te boeken.
+                        <br>
+                        Samen werken we aan een gezonder, sterker en zelfverzekerder leven!
+                    </p>
+                </div>
+                <div class="heroImage4 col-lg-5 col-12"></div>
             </div>
-            <div class="heroImage col-lg-5 col-10"></div>
         </div>
         <br>
         <br>
         <br>
         <div class="container">
-            <div class="row">
-                <h3 class="text-info text-center">Over mij</h3>
-                <div class="col-6">
-
+            <div class="row g-0 justify-content-center gap-4 mt-4">
+                <div class="col-lg-5 col-10">
+                    <h2 class="text-white mb-2">Personal training <span class="text-info">en meer</span></h2>
+                    <hr>
+                    <p class="text-white">
+                        <i class="fa-solid fa-people-arrows text-info"></i> Personal training / small group training
+                    </p>
+                    <p class="text-white">
+                        <i class="fa-solid fa-calculator text-info"></i> Individuele begeleiding op maat
+                    </p>
+                    <p class="text-white">
+                        <i class="fa-solid fa-apple-whole text-info"></i> Gepersonaliseerd voedingsadvies
+                    </p>
+                    <p class="text-white">
+                        <i class="fa-solid fa-person-circle-check text-info"></i> Persoonlijke aanpak
+                    </p>
+                    <p class="text-white fw-bold">
+                        <i class="fa-solid fa-check text-info"></i> Voor alle niveau's en leeftijden
+                    </p>
+                    <div>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                           class="btn btn-info col-lg-5 col-12 rounded-pill text-white">Contacteer mij!</a>
+                    </div>
                 </div>
-                <div class="heroImage2 col-lg-5 col-10"></div>
+                <div class="heroImage col-lg-5 col-10"></div>
             </div>
         </div>
+
         <div class="container">
             <div class="row gap-2 justify-content-center g-0">
                 <h3 class="text-info text-center mb-3">Reviews van klanten</h3>
+                <hr>
                 @for($i = 0; $i < 8; $i++)
                 <div class="d-flex justify-content-center flex-column col-lg-4
                 col-12 border border-info p-2 gap-2 rounded reviewContainer">
@@ -96,7 +148,7 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -108,27 +160,27 @@
                 @method('POST')
                 <div class="modal-body d-flex flex-column gap-2">
                     <div class="form-group">
-                        <label for="">Voornaam</label>
+                        <label for="">Voornaam<span class="text-danger">*</span></label>
                         <input type="text" class="form-control contactInput" name="firstname">
                         <span class="text-danger" id="errorfirstname">@error('firstname'){{$message}}@enderror</span>
                     </div>
                     <div class="form-group">
-                        <label for="">Achternaam</label>
+                        <label for="">Achternaam<span class="text-danger">*</span></label>
                         <input type="text" class="form-control contactInput" name="lastname">
                         <span class="text-danger" id="errorlastname">@error('lastname'){{$message}}@enderror</span>
                     </div>
                     <div class="form-group">
-                        <label for="">Email adres</label>
+                        <label for="">Email adres<span class="text-danger">*</span></label>
                         <input type="email" class="form-control contactInput" name="email">
                         <span class="text-danger" id="erroremail">@error('email'){{$message}}@enderror</span>
                     </div>
                     <div class="form-group">
-                        <label for="">Telefoon nummer</label>
+                        <label for="">Telefoon nummer<span class="text-danger">*</span></label>
                         <input type="number" class="form-control contactInput" name="phone_number">
                         <span class="text-danger" id="errorphone_number">@error('phone_number'){{$message}}@enderror</span>
                     </div>
                     <div class="form-group">
-                        <label for="">Bericht</label>
+                        <label for="">Bericht<span class="text-danger">*</span></label>
                         <textarea name="message" class="form-control contactInput errormessage" cols="30" rows="10"></textarea>
                         <span class="text-danger" id="errormessage">@error('message'){{$message}}@enderror</span>
                     </div>

@@ -1,4 +1,6 @@
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-<script src="https://jeroen.yusufyildiz.nl/js/script.js"></script>
-</body>
-</html>
+<footer class="py-3 checkered">
+    <p class="text-center text-muted">© 2023 Wirken workouts</p>
+    <br>
+    <p class="text-center text-muted">Build by <a target="_blank" href="https://yusufyildiz.nl">Yusuf Yildiz</a></p>
+</footer>
+

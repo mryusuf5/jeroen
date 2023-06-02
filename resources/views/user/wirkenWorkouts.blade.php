@@ -1,5 +1,5 @@
 <x-user-layout>
-    <div class="bg-dark workoutsBackground">
+    <div class="checkered workoutsBackground">
         <br>
         <div class="container">
             @foreach($workouts as $index => $workout)

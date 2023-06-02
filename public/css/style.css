@@ -1,3 +1,10 @@
+.checkered {
+    background-color: rgb(32, 32, 32);
+    background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(to bottom, rgb(8, 8, 8), rgb(32, 32, 32));
+    background-size: 5px 5px, 5px 5px, 5px .5px;
+    background-position: 0px 0px, 5px 5px, 0px 0px;
+}
+
 .heroImage{
     background-image: radial-gradient(circle, transparent, #212529), url("../images/jeroen.jpg");
     width: 40%;
@@ -9,6 +16,15 @@
 
 .heroImage2{
     background-image: radial-gradient(circle, transparent, #212529), url("../images/jeroen3.jpg");
+    width: 40%;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.heroImage3{
+    background-image: radial-gradient(circle, transparent, #212529), url("../images/jeroen4.jpg");
     width: 40%;
     height: 400px;
     background-repeat: no-repeat;
