@@ -75,31 +75,36 @@
                         <div data-i18n="Analytics">Website</div>
                     </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item {{Route::is('admin.carousel.index') ? 'active' : ''}}">
                     <a href="{{route('admin.carousel.index')}}" class="menu-link gap-2">
                         <i class="fa-solid fa-image text-info"></i>
                         <div data-i18n="Analytics">Carousel foto's</div>
                     </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item {{Route::is('admin.workouts.index') || Route::is('admin.workouts.edit')
+                                        ? 'active' : ''}}">
                     <a href="{{route('admin.workouts.index')}}" class="menu-link gap-2">
                         <i class="fa-solid fa-dumbbell text-info"></i>
                         <div>Wirken workouts</div>
                     </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item {{Route::is('admin.customers.index') || Route::is('admin.customers.edit')
+                                         ? 'active' : ''}}">
                     <a href="{{route('admin.customers.index')}}" class="menu-link gap-2">
                         <i class="fa-solid fa-users text-info"></i>
                         <div>Klanten</div>
                     </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item {{Route::is('admin.charts.index') || Route::is('admin.charts.edit')
+                                         ? 'active' : ''}}">
                     <a href="{{route('admin.charts.index', ['chartType' => 'bars'])}}" class="menu-link gap-2">
                         <i class="fa-solid fa-chart-line text-info"></i>
                         <div>Grafieken</div>
                     </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item {{Route::is('admin.contact_messages.index')
+                                         || Route::is('admin.contact_messages.edit')
+                                         ? 'active' : ''}}">
                     <a href="{{route('admin.contact_messages.index')}}" class="menu-link gap-2 position-relative">
                         <i class="fa-solid fa-envelope text-info"></i>
                         <div class="position-relative">
