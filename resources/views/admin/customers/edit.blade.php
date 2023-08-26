@@ -23,6 +23,14 @@
             </div>
             <br>
             <div class="form-group">
+                <label for="">Gender</label>
+                <select name="gender" class="form-select">
+                    <option value="0" @if($customer->gender == 0) selected @endif>Man</option>
+                    <option value="1" @if($customer->gender == 1) selected @endif>Vrouw</option>
+                </select>
+            </div>
+            <br>
+            <div class="form-group">
                 <label for="">Email</label>
                 <input name="email" type="email" class="form-control" value="{{$customer->email}}">
             </div>

@@ -33,6 +33,7 @@ class CustomersController extends Controller
         $request->validate([
             'firstname' => 'required',
             'lastname' => 'required',
+            'gender' => 'required',
             'email' => 'required',
             'phone_number' => 'required'
         ]);
@@ -44,6 +45,7 @@ class CustomersController extends Controller
         $customer->firstname = ucfirst($request->firstname);
         $customer->lastname = ucfirst($request->lastname);
         $customer->lastname = ucfirst($request->lastname);
+        $customer->gender = $request->gender;
         $customer->email = $request->email;
         $customer->phone_number = $request->phone_number;
 
@@ -85,6 +87,7 @@ class CustomersController extends Controller
         $request->validate([
             'firstname' => 'required',
             'lastname' => 'required',
+            'gender' => 'required',
             'email' => 'required',
             'phone_number' => 'required',
         ]);
@@ -93,6 +96,7 @@ class CustomersController extends Controller
 
         $customer->firstname = $request->firstname;
         $customer->lastname = $request->lastname;
+        $customer->gender = $request->gender;
         $customer->email = $request->email;
         $customer->phone_number = $request->phone_number;
 

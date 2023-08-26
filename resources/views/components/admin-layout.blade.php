@@ -75,10 +75,16 @@
                         <div data-i18n="Analytics">Website</div>
                     </a>
                 </li>
-                <li class="menu-item {{Route::is('admin.carousel.index') ? 'active' : ''}}">
+                <li class="menu-item {{Route::is('admin.carousel.index') || Route::is('admin.carousel.create') ? 'active' : ''}}">
                     <a href="{{route('admin.carousel.index')}}" class="menu-link gap-2">
                         <i class="fa-solid fa-image text-info"></i>
                         <div data-i18n="Analytics">Carousel foto's</div>
+                    </a>
+                </li>
+                <li class="menu-item {{Route::is('admin.diplomas.index') || Route::is('admin.diplomas.create') ? 'active' : ''}}">
+                    <a href="{{route('admin.diplomas.index')}}" class="menu-link gap-2">
+                        <i class="fa-solid fa-certificate text-info"></i>
+                        <div data-i18n="Analytics">Diploma's en certificaten</div>
                     </a>
                 </li>
                 <li class="menu-item {{Route::is('admin.workouts.index') || Route::is('admin.workouts.edit')

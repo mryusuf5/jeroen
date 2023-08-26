@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\diplomas;
 use App\Models\SliderImages;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -13,7 +14,10 @@ class SliderController extends Controller
     public function welcome(): View
     {
         $images = SliderImages::all();
-        return view('user.welcome', compact('images'));
+        $diplomas = diplomas::all();
+        return view('user.welcome', compact(
+            'images',
+        'diplomas'));
     }
     /**
      * Display a listing of the resource.

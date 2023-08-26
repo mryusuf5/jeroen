@@ -72,8 +72,12 @@
 }
 
 @media only screen and (min-width: 992px) {
-    .carousel-inner{
+    .carousel-inner-images{
         height: 700px !important;
+        width: 900px !important;
+    }
+
+    .carousel-inner-diplomas img{
         width: 900px !important;
     }
 

@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->integer('customer_id');
             $table->integer('workout_id');
-            $table->string('time');
-            $table->text('seconds');
+            $table->string('time')->nullable();
+            $table->text('seconds')->nullable();
+            $table->text('rounds')->nullable();
             $table->text('remark')->nullable();
             $table->tinyInteger('anonymous')->default(0);
             $table->timestamps();
