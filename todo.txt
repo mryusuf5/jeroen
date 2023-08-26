@@ -1,18 +1,5 @@
-//carousel automatisch switchen,
-//kleiner
 training@wirkensports.nu
 prijzen: de prijzen kunnen variën middels de leeftijd, onder 18 is goedkoper, combat training (zelfverdediging, kick/boksen, mma, judo, grappling, bjj), kom je vaker dan 2x per week dan krijg je korting
-Harde papieren: Judo zwarte band / 1ste en 2de dan, Calisthenics trainer A + B, Bjj paarse band, Mma 4 Wins 0 Losses (2 arm bar submissions, 2 decisions) (Momenteel mee bezig: Lifestyle coach, Crossfit trainer level 1, Judo leraar A + B)
-//Over mij
-tussenkopje certificaten
-- Enthousiast
-- Sprotief
-- Sociaal / Vriendelijk
-
-//Beschrijving wirken workouts met editor
-
-//wirkenworkouts text wit maken
-//leaderboard
 
 grafiek sturen naar de klant via mail
 

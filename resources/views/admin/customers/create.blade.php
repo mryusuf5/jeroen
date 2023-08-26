@@ -22,6 +22,15 @@
             </div>
             <br>
             <div class="form-group">
+                <label for="">Gender <span class="text-danger">*</span></label>
+                <select name="gender" class="form-select">
+                    <option value="0">Man</option>
+                    <option value="1">Vrouw</option>
+                </select>
+                <span class="text-danger">@error('gender'){{$message}}@enderror</span>
+            </div>
+            <br>
+            <div class="form-group">
                 <label for="">Email <span class="text-danger">*</span></label>
                 <input name="email" type="email" class="form-control">
                 <span class="text-danger">@error('email'){{$message}}@enderror</span>

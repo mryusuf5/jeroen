@@ -91,7 +91,7 @@ class WorkoutsController extends Controller
                     'leaderboards.anonymous',
                     'leaderboards.created_at',
                 )
-                ->orderby('seconds', 'DESC')
+                ->orderby('rounds', 'DESC')
                 ->get();
         }
 

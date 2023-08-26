@@ -3,6 +3,7 @@
 use App\Http\Controllers\ChartsController;
 use App\Http\Controllers\ContactMessagesController;
 use App\Http\Controllers\CustomersController;
+use App\Http\Controllers\DiplomasController;
 use App\Http\Controllers\LeaderboardsController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UserController;
@@ -48,4 +49,5 @@ Route::prefix('/admin')->name('admin.')->middleware('admin')->group(function(){
     Route::resource('contact_messages', ContactMessagesController::class);
     Route::resource('leaderboards', LeaderboardsController::class);
     Route::resource('chart_data', ChartDataController::class);
+    Route::resource('diplomas', DiplomasController::class);
 });

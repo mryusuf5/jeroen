@@ -9,7 +9,7 @@
                             data-bs-slide-to="{{$index}}" class="active"></button>
                     @endforeach
                 </div>
-                <div class="carousel-inner">
+                <div class="carousel-inner carousel-inner-images">
                     @foreach($images as $index => $image)
                     <div class="carousel-item @if($index == 0) active @endif ">
                         <img src="{{asset('images/carousel/' . $image->image_path)}}" class="d-block w-100">
@@ -33,8 +33,10 @@
         <div class="container d-flex justify-content-center">
             <div class="screen">
                 <div class="screen-image" style="background-image: url('{{asset("images/jeroen2.jpg")}}')"></div>
-{{--                <div class="screen-overlay"></div>--}}
                 <div class="screen-content">
+                    <a href="{{route('wirkenWorkouts')}}" class="link text-info" style="position: absolute; top: 15%; left: 50%; transform: translate(-50%, -50%); width: 65%; text-align: center">
+                        Ben je al een klant? zie hier je behaalde resultaten!
+                    </a>
                     <div class="screen-user">
                         <span class="name">WW</span>
                         <a class="link" href="{{route('wirkenWorkouts')}}">Wirken workouts</a>
@@ -44,43 +46,76 @@
         </div>
         <br>
 
+        <div class="container" id="diplomas">
+            <h3 class="text-info text-center">Mijn behaalde diploma's en certificaten</h3>
+            <hr>
+            <div class="container d-flex justify-content-center">
+                <div id="carouselExampleIndicators2" class="carousel slide border border-info" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        @foreach($diplomas as $index => $image)
+                            <button type="button" data-bs-target="#carouselExampleIndicators2"
+                                    data-bs-slide-to="{{$index}}" class="active"></button>
+                        @endforeach
+                    </div>
+                    <div class="carousel-inner carousel-inner-diplomas" id="carouselContainer">
+                        @foreach($diplomas as $index => $image)
+                            <div class="carousel-item @if($index == 0) active @endif ">
+                                <img src="{{asset('images/diplomas/' . $image->image_path)}}" class="d-block w-100">
+                            </div>
+                        @endforeach
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <br>
         <div class="container" id="over-mij">
             <div class="row justify-content-center gap-2">
                 <h3 class="text-info text-center">Over mij</h3>
                 <hr>
                 <div class="col-lg-6 col-12">
                     <p class="fs-3">
-                        Welkom op mijn personal training website!
+                        Welkom op mijn Personal Training website!
                         <br>
-                        Ik ben <span class="text-info">Jeroen Wirken</span>, een gepassioneerde personal trainer, judoka en instructeur.
+                        Ik ben <span class="text-info">Jeroen Wirken</span>, een gepassioneerde personal trainer,
+                        judoka en instructeur.
                         <br>
-                        Met mijn brede kennis en ervaring in vechtsporten en fitness help ik mensen om hun fysieke
-                        doelen te bereiken en hun kracht en vaardigheden te ontwikkelen.
+                        Met mijn brede kennis en ervaring in de sportschool in diverse vecht- en verdedigingssporten,
+                        fitness, CrossFit en calisthenics, help ik mensen om hun fysieke doelen te behalen en hun kracht
+                        en vaardigheden te ontwikkelen.
+
+                        Of je nu je algehele fitheid wilt verbeteren, spierkracht wilt opbouwen, uithoudingsvermogen
+                        wilt verhogen of lichaamsbeheersing wilt ontwikkelen, ik bied op maat gemaakte trainingen aan
+                        die passen bij jouw behoeften en doelen.
                     </p>
                 </div>
                 <div class="heroImage2 col-lg-5 col-12"></div>
                 <div class="heroImage3 col-lg-5 col-12"></div>
                 <div class="col-lg-6 col-12">
                     <p class="fs-3">
-                        Als judoka ben ik trots op mijn zwarte band 2de dan.
+                        Als judoka ben ik trots op mijn zwarte band 2de Dan.
                         <br>
                         Ik heb jarenlang intensief getraind en meegedaan aan judowedstrijden, waarbij ik mijn techniek
-                        en doorzettingsvermogen heb verfijnd.
-                        <br>
-                        Daarnaast heb ik ook vier MMA-gevechten gewonnen met indrukwekkende finishes.
+                        en doorzettingsvermogen heb verfijnd, op deze pure wilskracht en techniek heb ik ook al mijn
+                        vier MMA partijen gewonnen.
                     </p>
                 </div>
                 <div class="col-12">
                     <p class="fs-3">
-                        Ik geef ook judoles aan kinderen, omdat ik geloof dat judo hen helpt bij het ontwikkelen van
-                        discipline, respect en zelfvertrouwen.
+                        Neem vandaag nog contact met mij op en laten we samen aan de slag gaan met jouw persoonlijke
+                        trainingstraject!
                         <br>
-                        Daarnaast bied ik personal training aan, aangepast aan jouw doelen en behoeften.
-                        <br>
-                        Neem gerust contact met me op voor meer informatie of om een persoonlijke trainingsessie
-                        te boeken.
-                        <br>
-                        Samen werken we aan een gezonder, sterker en zelfverzekerder leven!
+                        <a href="#contact" class="text-info">Klik hier voor meer info!</a>
                     </p>
                 </div>
                 <div class="heroImage4 col-lg-5 col-12"></div>
@@ -89,7 +124,7 @@
         <br>
         <br>
         <br>
-        <div class="container">
+        <div class="container" id="contact">
             <div class="row g-0 justify-content-center gap-4 mt-4">
                 <div class="col-lg-5 col-10">
                     <h2 class="text-white mb-2">Personal training <span class="text-info">en meer</span></h2>
@@ -210,5 +245,19 @@
                 onClick: function(){} // Callback after click
             }).showToast();
         @endif
+
+        window.addEventListener('load', function() {
+            var images = document.querySelectorAll("#carouselContainer img");
+            var imageHeight = images[0].height;
+
+            images[0].addEventListener('load', function() {
+                imageHeight = this.height;
+                document.getElementById("carouselContainer").style.height = imageHeight + 'px';
+            });
+
+            // Fallback for cases where the load event might not fire
+            setTimeout(function() {
+                document.getElementById("carouselContainer").style.height = imageHeight + 'px';
+            }, 2000);
     </script>
 </x-user-layout>

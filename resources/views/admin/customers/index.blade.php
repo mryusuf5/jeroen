@@ -15,6 +15,7 @@
                     <th>Afbeelding</th>
                     <th>@sortablelink('firstname', 'Voornaam')</th>
                     <th>@sortablelink('lastname', 'Achternaam')</th>
+                    <th>@sortablelink('Gender', 'Gender')</th>
                     <th>@sortablelink('Email', 'Email')</th>
                     <th>Tel. nummer</th>
                 </tr>
@@ -35,6 +36,7 @@
                         @endif
                         <td>{{$customer->firstname}}</td>
                         <td>{{$customer->lastname}}</td>
+                        <td>{{$customer->gender ? 'Vrouw' : 'Man'}}</td>
                         <td>{{$customer->email}}</td>
                         <td class="text-info">{{$customer->phone_number}}</td>
                         <td>

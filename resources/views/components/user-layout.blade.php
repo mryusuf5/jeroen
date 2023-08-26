@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{asset('')}}css/style.css">
     <link rel="stylesheet" href="{{asset('')}}css/futuristicCard.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="{{asset('')}}js/bootstrap.bundle.js"></script>
     <script src="https://kit.fontawesome.com/e0462e4fee.js" crossorigin="anonymous"></script>
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
@@ -62,11 +62,11 @@
                         @else {{route('home') . '#over-mij'}} @endif">Over mij</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Diplomas/certificaten</a>
+                        <a class="nav-link text-white" href="#diplomas">Diplomas/certificaten</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Verkoop</a>
-                    </li>
+{{--                    <li class="nav-item">--}}
+{{--                        <a class="nav-link text-white" href="#">Verkoop</a>--}}
+{{--                    </li>--}}
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{route('wirkenWorkouts')}}">Wirken workouts</a>
                     </li>
