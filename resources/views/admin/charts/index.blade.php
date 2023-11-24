@@ -57,6 +57,18 @@
                                         <h4>{{$chart_data->weight}} Kilo</h4>
                                     </div>
                                 </div>
+                                @if($chart_data->message)
+                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#messageModal{{$chart_data->id}}">Open opmerking</button>
+                                    <div class="modal fade" id="messageModal{{$chart_data->id}}" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    {{$chart_data->message}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
                             </div>
                         @endforeach
                     <br>

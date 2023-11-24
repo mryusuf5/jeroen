@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->integer('customer_id');
             $table->integer('chart_id');
-            $table->float('weight');
-            $table->float('fat_percentage');
+            $table->float('weight')->nullable();
+            $table->float('fat_percentage')->nullable();
+            $table->float('muscle_mass')->nullable();
+            $table->text("message")->nullable();
             $table->timestamps();
         });
     }

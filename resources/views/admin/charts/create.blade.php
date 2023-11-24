@@ -33,6 +33,12 @@
             </div>
             <br>
             <div class="form-group">
+                <label for="">Opmerking <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" name="message">
+                <span class="text-danger">@error('fat_percentage'){{$message}}@enderror</span>
+            </div>
+            <br>
+            <div class="form-group">
                 <input type="submit" value="Toevoegen" class="btn btn-info">
             </div>
         </form>

@@ -72,6 +72,7 @@ class ChartsController extends Controller
         $chart_data->customer_id = $request->customer_id;
         $chart_data->weight = $weight;
         $chart_data->fat_percentage = $fat_percentage;
+        $chart_data->message = $request->message;
 
         $chart_data->save();
 
@@ -126,6 +127,7 @@ class ChartsController extends Controller
         $chart_data->customer_id = $request->customer_id;
         $chart_data->weight = $weight;
         $chart_data->fat_percentage = $fat_percentage;
+        $chart_data->message = $request->message;
         $chart_data->save();
 
         return redirect()->route('admin.charts.edit', $id)->with('success', 'Grafiek aangepast');
