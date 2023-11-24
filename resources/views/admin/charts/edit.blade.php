@@ -64,6 +64,19 @@
                             @method('DELETE')
                             <input type="submit" class="btn btn-danger" value="Verwijderen">
                         </form>
+                        <br>
+                        @if($chart_data->message)
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#messageModal{{$chart_data->id}}">Open opmerking</button>
+                            <div class="modal fade" id="messageModal{{$chart_data->id}}" tabindex="-1">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            {{$chart_data->message}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
                     </div>
                 @endforeach
             @endif
@@ -88,6 +101,12 @@
                 <div class="form-group">
                     <label for="">Datum</label>
                     <input type="date" class="form-control" name="date">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="">Opmerking <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" name="message">
+                    <span class="text-danger">@error('fat_percentage'){{$message}}@enderror</span>
                 </div>
                 <br>
                 <div class="form-group">
